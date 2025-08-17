@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import { useConvexQuery } from '@/hooks/use-convex-query';
 import { api } from '@/convex/_generated/api';
