@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Sora:wght@400;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --radius: 2.5rem;
+  --card: #ffffff;
+  --card-foreground: #23272f;
+  --popover: #ffffff;
+  --popover-foreground: #23272f;
+  --primary: #1e293b;
+  --primary-foreground: #f3f4f6;
+  --secondary: #f3f4f6;
+  --secondary-foreground: #1e293b;
+  --muted: #f3f4f6;
+  --muted-foreground: #6b7280;
+  --accent: #f3f4f6;
+  --accent-foreground: #1e293b;
+  --destructive: #f87171;
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --ring: #a7f3d0;
+  --chart-1: #34d399;
+  --chart-2: #60a5fa;
+  --chart-3: #fbbf24;
+  --chart-4: #a78bfa;
+  --chart-5: #f472b6;
+  --sidebar: #f3f4f6;
+  --sidebar-foreground: #23272f;
+  --sidebar-primary: #1e293b;
+  --sidebar-primary-foreground: #f3f4f6;
+  --sidebar-accent: #f3f4f6;
+  --sidebar-accent-foreground: #1e293b;
+  --sidebar-border: #e5e7eb;
+  --sidebar-ring: #a7f3d0;
+  --background: #ffffff;
+  --foreground: #23272f;
+}
+
+.dark {
+  --background: #23272f;
+  --foreground: #f3f4f6;
+  --card: #1e293b;
+  --card-foreground: #f3f4f6;
+  --popover: #1e293b;
+  --popover-foreground: #f3f4f6;
+  --primary: #e5e7eb;
+  --primary-foreground: #1e293b;
+  --secondary: #374151;
+  --secondary-foreground: #f3f4f6;
+  --muted: #374151;
+  --muted-foreground: #a7f3d0;
+  --accent: #374151;
+  --accent-foreground: #f3f4f6;
+  --destructive: #ef4444;
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --ring: #6ee7b7;
+  --chart-1: #60a5fa;
+  --chart-2: #a78bfa;
+  --chart-3: #f472b6;
+  --chart-4: #34d399;
+  --chart-5: #fbbf24;
+  --sidebar: #1e293b;
+  --sidebar-foreground: #f3f4f6;
+  --sidebar-primary: #60a5fa;
+  --sidebar-primary-foreground: #f3f4f6;
+  --sidebar-accent: #374151;
+  --sidebar-accent-foreground: #f3f4f6;
+  --sidebar-border: #e5e7eb;
+  --sidebar-ring: #6ee7b7;
+}
+
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+  body {
+    font-family: 'Inter', 'Sora', sans-serif;
+    background: linear-gradient(135deg, #f0f4ff 0%, #e0f7fa 100%);
+    min-height: 100vh;
+    color: #18181b;
+  }
+}
+
+@layer components {
+  .glass {
+    background: rgba(255,255,255,0.85);
+    box-shadow: 0 8px 32px 0 rgba(31,38,135,0.18);
+    backdrop-filter: blur(18px);
+    border-radius: 2.5rem;
+    border: 1px solid rgba(255,255,255,0.18);
+  }
+
+  .premium-gradient {
+    background: linear-gradient(90deg, #36d7b7 0%, #6ee7b7 50%, #818cf8 100%);
+    color: white;
+    box-shadow: 0 4px 24px 0 rgba(129,140,248,0.18);
+  }
+
+  /* Floating shapes/particles */
+  .particle-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .particle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.18;
+    filter: blur(12px);
+    animation: float 12s infinite ease-in-out;
+  }
+
+  /* SVG pointer events fix */
+  svg {
+    pointer-events: none;
+  }
+
+  /* Better dark mode text contrast */
+  .dark .text-muted-foreground {
+    color: #d1d5db;
+  }
+
+  /* Gradient title utility */
+  .gradient-title {
+    @apply bg-gradient-to-r from-green-600 to-teal-500 bg-clip-text text-transparent font-extrabold tracking-tighter;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    /* Fallback for browsers that don't support background-clip: text */
+    color: #059669;
+  }
+}
+
+@keyframes float {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-40px) scale(1.1); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+/* Smooth transitions for theme */
+* {
+  transition: background 0.3s, color 0.3s, border 0.3s;
+}

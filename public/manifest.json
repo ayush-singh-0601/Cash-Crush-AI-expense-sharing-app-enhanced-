@@ -1,0 +1,22 @@
+{
+  "name": "Cash Crush - Fun AI Expense Sharing",
+  "short_name": "Cash Crush",
+  "description": "Crush your group expenses with AI! The Gen Z way to split, track, and settle bills with friends.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f0f4ff",
+  "theme_color": "#36d7b7",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/logos/logo-s.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/logos/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+} 
